@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em busca da cidade perdida</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #1a2a1a 0%, #3a4a3a 100%);
+            color: #f4ecd8;
+            font-family: 'Lato', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        main {
+            background-color: rgba(0, 0, 0, 0.6);
+            border: 2px solid #8b7355;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .passo {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .passo.ativo {
+            display: block;
+        }
+
+        .botoes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-proximo {
+            background-color: #8b7355;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            width: 80%;
+            max-width: 300px;
+        }
+
+        .btn-proximo:hover {
+            background-color: #a0886a;
+        }
+
+        .btn-proximo:active {
+            transform: scale(0.95);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Em busca da cidade perdida</h1>
+      
+        <!-- Passo 0: Início -->
+        <div class="passo ativo" id="passo-0">
+            <p>Um dia desses, dentro de um livro da biblioteca da escola, eu descobri uma carta antiga sobre uma cidade perdida, escondida por riquezas e belezas naturais. Nessa carta, a autora deixa algumas pistas para encontrar essa cidade e eu decidi segui-las!</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="1">Viajar para o Rio de Janeiro</button>
+                <button class="btn-proximo" data-proximo="2">Viajar para Pernambuco</button>
+                <button class="btn-proximo" data-proximo="14">Viajar para a Bahia</button>
+                <button class="btn-proximo" data-proximo="22">Viajar para Minas Gerais</button>
+                <button class="btn-proximo" data-proximo="30">Viajar para o Pará</button>
+                <button class="btn-proximo" data-proximo="38">Viajar para Santa Catarina</button>
+                <button class="btn-proximo" data-proximo="46">Viajar para Goiás</button>
+            </div>
+        </div>
+
+        <!-- Passo 1 ao 13: Caminhos Originais -->
+        <div class="passo" id="passo-1">
+            <p>Você começa sua jornada no Rio de Janeiro, subindo o Pico da Tijuca ao amanhecer para encontrar a primeira pista. O vento sopra forte e a vista é de tirar o fôlego.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="3">Procurar a pista no topo do pico</button>
+                <button class="btn-proximo" data-proximo="4">Desistir e voltar para casa</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-2">
+            <p>Você desembarca em Pernambuco, cercado por praias belíssimas e muita história. A carta menciona um antigo forte holandês que guarda um segredo.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="5">Explorar as ruínas do Forte Orange</button>
+                <button class="btn-proximo" data-proximo="4">Achar muito perigoso e voltar para casa</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-3">
+            <p>Com muito esforço, você escava debaixo de uma pedra com marcas estranhas. Sucesso! Você encontrou um antigo medalhão dourado que aponta para o interior da Floresta Amazônica. A aventura continua!</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="6">Viajar para a Amazônia</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-4">
+            <p>O cansaço e o medo falaram mais alto. Você decide que o conforto de casa é melhor do que uma aventura incerta. Quem sabe numa próxima vez?</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Tentar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-5">
+            <p>Nas masmorras do antigo forte, iluminadas apenas pela sua lanterna, você encontra um mapa náutico secular! Ele aponta misteriosamente para o arquipélago de Fernando de Noronha.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="11">Viajar para Fernando de Noronha</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-6">
+            <p>Você chega à imensidão verde da Floresta Amazônica. O clima é úmido, os sons da selva estão por toda parte, e o medalhão parece pulsar levemente perto do rio. Como você deseja prosseguir?</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="7">Alugar um barco e seguir pelo rio</button>
+                <button class="btn-proximo" data-proximo="8">Contratar um guia local para ir pela mata</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-7">
+            <p>Navegando pelo majestoso rio, você avista antigas ruínas de pedra parcialmente submersas na margem. A água é escura, mas o medalhão aponta para baixo.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="9">Mergulhar nas ruínas</button>
+                <button class="btn-proximo" data-proximo="4">Desistir por medo dos crocodilos</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-8">
+            <p>A mata é extremamente densa, mas o guia conhece os caminhos ocultos. Após dias de caminhada exaustiva, vocês chegam a um imponente templo de pedra tomado por raízes gigantes, adornado com símbolos enigmáticos.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="10">Tentar decifrar os símbolos antigos</button>
+                <button class="btn-proximo" data-proximo="4">Desistir e voltar antes que anoiteça</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-9">
+            <p>Ao mergulhar, a água subitamente se torna cristalina, revelando uma passagem iluminada que leva à mítica Cidade de Ouro Submersa! Você descobriu riquezas além da imaginação. Parabéns pela vitória!</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Jogar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-10">
+            <p>Os símbolos formam um complexo quebra-cabeça. Ao alinhar o medalhão com as marcas, uma gigantesca porta de pedra se abre, revelando a Caverna Secreta da Cidade Perdida, iluminada por cristais azuis. Uma descoberta sem precedentes!</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Jogar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-11">
+            <p>Com o mapa em mãos, você chega a Fernando de Noronha. O mar aberto guarda muitos segredos, e o mapa indica coordenadas específicas no fundo do oceano, mas também marca pontos menores nas ilhas vizinhas.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="12">Mergulhar fundo no local exato do mapa</button>
+                <button class="btn-proximo" data-proximo="13">Explorar as ilhas menores ao redor primeiro</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-12">
+            <p>Você respira fundo e realiza um mergulho profundo. No fundo do oceano azul, depara-se com pilares colossais e construções majestosas intocadas pelo tempo. Você encontrou a famosa Atlântida Brasileira! Parabéns!</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Jogar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-13">
+            <p>Enquanto você explorava as ilhas menores de barco, uma tempestade súbita e violenta se formou. Seu barco virou. Você conseguiu nadar até a costa, mas o mapa secular foi levado pelo mar para sempre. Fim da linha.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Tentar Novamente</button>
+            </div>
+        </div>
+
+        <!-- Bahia (Passos 14 ao 21) -->
+        <div class="passo" id="passo-14">
+            <p>Você chega na ensolarada Bahia. A carta cita o centro histórico e as montanhas. Onde você quer buscar sua primeira pista?</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="15">Explorar o Pelourinho em Salvador</button>
+                <button class="btn-proximo" data-proximo="16">Viajar para a Chapada Diamantina</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-15">
+            <p>Caminhando pelo Pelourinho, você encontra um velho diário escondido na parede de um convento. O diário aponta dois caminhos.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="17">Ir até o Farol da Barra investigar</button>
+                <button class="btn-proximo" data-proximo="18">Descer ao Mercado Modelo e procurar nos porões</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-16">
+            <p>Na Chapada Diamantina, você escala o Morro do Pai Inácio e acha uma bússola de prata antiga presa numa rocha.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="19">Seguir a bússola para dentro de uma caverna</button>
+                <button class="btn-proximo" data-proximo="20">Seguir a bússola descendo a correnteza do rio</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-17">
+            <p>No Farol, escavando onde a sombra bate ao meio-dia, você descobre uma escotilha secreta de ferro!</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="21">Abrir a escotilha e descer</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-18">
+            <p>Nos porões do mercado, você acaba se perdendo em túneis escuros que dão para o mar. A maré sobe e você precisa fugir sem nada. Fim da linha.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Tentar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-19">
+            <p>A caverna brilha intensamente. Você encontrou a mítica Cidade de Diamantes Escondida, iluminada por milhares de pedras preciosas cravadas nas paredes. Vitória!</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Jogar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-20">
+            <p>A correnteza do rio fica muito forte, levando sua mochila e a bússola embora. Sem equipamentos, você é obrigado a voltar. Fim de jogo.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Tentar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-21">
+            <p>A escotilha leva a um forte subterrâneo intocado onde repousa a lendária Coroa de Ouro dos Navegantes! Você fez uma descoberta histórica. Parabéns!</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Jogar Novamente</button>
+            </div>
+        </div>
+
+        <!-- Minas Gerais (Passos 22 ao 29) -->
+        <div class="passo" id="passo-22">
+            <p>Nas montanhas de Minas Gerais, o ar é frio e cheio de mistérios. A carta menciona ouro e sabedoria.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="23">Explorar uma mina de ouro desativada</button>
+                <button class="btn-proximo" data-proximo="24">Procurar arquivos na biblioteca central</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-23">
+            <p>Dentro da mina úmida, você acha uma bifurcação. Os trilhos continuam para a escuridão.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="25">Subir em um carrinho de mina antigo e descer a ladeira</button>
+                <button class="btn-proximo" data-proximo="26">Ir a pé com cuidado usando sua lanterna</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-24">
+            <p>Na biblioteca, um livro falso na estante revela o diário de um inconfidente, apontando para duas cidades históricas.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="27">Viajar para Tiradentes</button>
+                <button class="btn-proximo" data-proximo="28">Viajar para São João del Rei</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-25">
+            <p>O carrinho ganha muita velocidade e descarrila. Você não se fere gravemente, mas a passagem desmorona atrás de você e o resgate encerra sua aventura. Fim.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Tentar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-26">
+            <p>Avançando com cuidado, você chega ao Salão dos Inconfidentes, uma vasta câmara secreta repleta de artefatos de ouro e documentos históricos de valor inestimável! Vitória!</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Jogar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-27">
+            <p>Em Tiradentes, as coordenadas do diário o levam ao pé da Serra de São José. Uma névoa misteriosa começa a cobrir o local.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="29">Adentrar a névoa seguindo a bússola</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-28">
+            <p>Você pega o trem Maria Fumaça, mas descobre tarde demais que a pista de São João era uma armadilha para despistar caçadores de tesouro. Fim da linha.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Tentar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-29">
+            <p>Atravessando a névoa mágica, você encontra a lendária Cidade de Prata de Vila Rica, perfeitamente preservada no tempo! Uma vitória inesquecível!</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Jogar Novamente</button>
+            </div>
+        </div>
+
+        <!-- Pará (Passos 30 ao 37) -->
+        <div class="passo" id="passo-30">
+            <p>O calor úmido do Pará te recebe. As lendas amazônicas são fortes aqui. Qual será seu primeiro destino?</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="31">Procurar pistas no Mercado Ver-o-Peso</button>
+                <button class="btn-proximo" data-proximo="32">Pegar um barco para a Ilha de Marajó</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-31">
+            <p>No mercado, uma sábia vendedora de ervas te entrega um amuleto de cerâmica e sussurra enigmas sobre o passado.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="33">Seguir o enigma até o Forte do Castelo</button>
+                <button class="btn-proximo" data-proximo="34">Procurar respostas no denso Bosque Rodrigues Alves</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-32">
+            <p>Na Ilha de Marajó, escavações arqueológicas revelam um vaso contendo rotas antigas desenhadas em argila.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="35">Viajar montado em búfalos pelos campos alagados</button>
+                <button class="btn-proximo" data-proximo="36">Navegar pelos furos e igarapés em uma canoa</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-33">
+            <p>Sob o forte, usando o amuleto como chave, os portões de ferro cedem, revelando a esquecida Cidade das Mangueiras Douradas! Você venceu!</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Jogar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-34">
+            <p>Você se aprofunda demais na mata fechada do bosque e perde completamente o senso de direção. A noite cai, e a aventura chega ao fim.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Tentar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-35">
+            <p>A jornada com os búfalos te leva a um local intocado, onde uma antiga tribo guardiã te espera em paz.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="37">Mostrar o vaso antigo ao Pajé</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-36">
+            <p>A canoa fica presa nas raízes dos manguezais durante a maré baixa. Cercado por lama e sem saída, você aciona o resgate. Fim de jogo.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Tentar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-37">
+            <p>O Pajé reconhece o vaso e te guia em segurança até o majestoso Templo do Muiraquitã, a verdadeira cidade verde perdida! Vitória!</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Jogar Novamente</button>
+            </div>
+        </div>
+
+        <!-- Santa Catarina (Passos 38 ao 45) -->
+        <div class="passo" id="passo-38">
+            <p>Você pousa em Florianópolis, a "Ilha da Magia". As lendas dizem que tesouros estão enterrados nas areias.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="39">Visitar a mística Lagoa da Conceição</button>
+                <button class="btn-proximo" data-proximo="40">Navegar até a Ilha do Campeche</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-39">
+            <p>Na beira da lagoa, você ouve moradores locais recitarem antigos versos sobre bruxas e tesouros açorianos.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="41">Caminhar pelas Dunas da Joaquina sob a lua cheia</button>
+                <button class="btn-proximo" data-proximo="42">Entrar na densa floresta ao redor da lagoa</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-40">
+            <p>A Ilha do Campeche exibe inscrições rupestres milenares nas pedras. Uma delas claramente parece um mapa.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="43">Entrar em uma caverna na costa de pedra</button>
+                <button class="btn-proximo" data-proximo="44">Mergulhar exatamente onde a flecha de pedra aponta</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-41">
+            <p>O vento nas dunas desenterra a ponta de um obelisco de cristal. Ao tocá-lo, o portal para a luminosa Cidade de Areia se abre! Vitória!</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Jogar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-42">
+            <p>A floresta à noite prega peças na sua mente. Você ouve uivos e passos e, dominado pelo medo, foge de volta para a civilização. Fim de jogo.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Tentar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-43">
+            <p>A maré sobe surpreendentemente rápido. A caverna é alagada e você escapa por um triz, perdendo suas ferramentas e a chance de encontrar a cidade. Fim.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Tentar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-44">
+            <p>Debaixo d'água, um brilho fluorescente mostra uma fenda perfeitamente redonda na rocha submarina.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="45">Nadar através da fenda secreta</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-45">
+            <p>A fenda te leva a uma enorme bolha de ar subterrânea, lar da mítica Atlântida do Sul! O tesouro e a glória são seus. Parabéns!</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Jogar Novamente</button>
+            </div>
+        </div>
+
+        <!-- Goiás (Passos 46 ao 53) -->
+        <div class="passo" id="passo-46">
+            <p>O cerrado de Goiás, no coração do Brasil, abriga segredos antigos na Chapada dos Veadeiros. Para onde ir primeiro?</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="47">Caminhar pelo exótico Vale da Lua</button>
+                <button class="btn-proximo" data-proximo="48">Visitar as águas azuis da Cachoeira Santa Bárbara</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-47">
+            <p>No Vale da Lua, as formações rochosas parecem de outro planeta. Uma rocha específica emite um zumbido grave.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="49">Acampar e esperar a pedra revelar seu segredo à noite</button>
+                <button class="btn-proximo" data-proximo="50">Tentar quebrar a pedra para ver o que tem dentro</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-48">
+            <p>Na cachoeira, a água é incrivelmente transparente. Ao observar o fundo, parece haver uma estrutura geométrica de quartzo.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="51">Fazer apneia e mergulhar até a estrutura</button>
+                <button class="btn-proximo" data-proximo="52">Procurar um mecanismo escondido na margem de terra</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-49">
+            <p>Sob a luz das estrelas, a rocha projeta um holograma natural no paredão, revelando a entrada para a Cidade de Quartzo! Uma vitória brilhante!</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Jogar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-50">
+            <p>Ao atingir a pedra com força, a ferramenta ricocheteia e voa no rio. A pedra não sofre um arranhão. Você fracassa na missão. Fim de jogo.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Tentar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-51">
+            <p>Ao tocar a estrutura no fundo da água, a correnteza muda suavemente, puxando você para um túnel iluminado.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" data-proximo="53">Deixar-se levar pelo túnel</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-52">
+            <p>Caminhando pela margem escorregadia, você cai e machuca o tornozelo seriamente. Incapaz de continuar, a busca termina aqui.</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Tentar Novamente</button>
+            </div>
+        </div>
+
+        <div class="passo" id="passo-53">
+            <p>O túnel te transporta em segurança para o coração do cerrado: O Santuário dos Cristais Gigantes, a mais bela das cidades perdidas! Parabéns!</p>
+            <div class="botoes-container">
+                <button class="btn-proximo" onclick="location.reload()">Jogar Novamente</button>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // Seleciona todos os botões que têm a classe 'btn-proximo'
+        const botoes = document.querySelectorAll('.btn-proximo');
+
+        // Adiciona um evento de clique a cada botão
+        botoes.forEach(botao => {
+            botao.addEventListener('click', function() {
+                // Obtém o valor do atributo 'data-proximo' se existir
+                const proximoPassoId = this.getAttribute('data-proximo');
+              
+                if (proximoPassoId) {
+                    // Encontra a div atual que está ativa
+                    const passoAtual = document.querySelector('.ativo');
+                  
+                    // Remove a classe 'ativo' da div atual
+                    passoAtual.classList.remove('ativo');
+                  
+                    // Encontra a próxima div usando o ID correspondente e adiciona a classe 'ativo'
+                    const proximoPasso = document.getElementById('passo-' + proximoPassoId);
+                    proximoPasso.classList.add('ativo');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
